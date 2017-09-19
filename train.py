@@ -13,6 +13,7 @@ import pickle;
 from sklearn.preprocessing import LabelEncoder;
 from sklearn.naive_bayes import GaussianNB,MultinomialNB;
 from sklearn.ensemble import VotingClassifier;
+from sklearn.feature_extraction.text import CountVectorizer;
 
 #cleaning the texts
 def clean_texts(dataset):
@@ -35,7 +36,6 @@ def clean_texts(dataset):
 
 #create bag of words model using vectorizer
 def bow(corpus):
-    from sklearn.feature_extraction.text import CountVectorizer;
     vectorizer = CountVectorizer();
     vectorizer.fit(corpus);
     
